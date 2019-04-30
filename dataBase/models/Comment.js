@@ -9,7 +9,13 @@ module.exports = (sequelize, DataTypes) => {
             },
             user_name: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                validate: {
+                    notEmpty: true,
+                    len: {
+                        args: [4, 40],
+                        msg: 'Name must be from 4 to 40 symbols'
+                    }
+                }
             },
             comment: {
                 type: DataTypes.TEXT,
