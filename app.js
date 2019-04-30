@@ -13,7 +13,10 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use(express.urlencoded({extends: true}));
 
-let commentRouter = require('./routes/comment');
+const postgres = require('./dataBase').getInstance();
+postgres.setModels();
+
+const commentRouter = require('./routes/comment');
 
 app.use('/comment', commentRouter);
 

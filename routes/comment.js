@@ -9,7 +9,7 @@ const edit = require('../controllers/comment/edit');
 
 router.get('/', getAll);
 router.delete('/:id', tokenValidator, deleteComment);
-router.post('/:id', create);
+router.post('/', create);
 router.put('/:id', tokenValidator, edit);
 
 module.exports = router;

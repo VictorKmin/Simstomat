@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
                 validate: {
                     notEmpty: true,
                     len: {
-                        args: [4, 40],
-                        msg: 'Name must be from 4 to 40 symbols'
+                        args: [2, 40],
+                        msg: 'Name must be from 2 to 40 symbols'
                     }
                 }
             },
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             created_at: {
                 type: DataTypes.DATE,
                 allowNull: false,
-                defaultValue: Date.now()
+                defaultValue: new Date().toISOString()
             },
         },
         {
